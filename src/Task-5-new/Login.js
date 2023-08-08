@@ -39,6 +39,7 @@ function Login() {
     //     navigate('/register')
     // }
 
+
     const regPersons = JSON.parse(window.localStorage.getItem('registeredDataFinal'));
     console.log(regPersons);
 
@@ -108,9 +109,9 @@ function Login() {
         console.log(e.target.value);
     }
 
-    const logPerson = regPersons.find((person) => {
+    const logPerson = regPersons? regPersons.find((person) => {
         return username === person.username;
-    })
+    }) : null
 
     const handleLoginUser = (e) => {
         e.preventDefault();

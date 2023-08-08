@@ -27,7 +27,7 @@ function HodLogin2() {
 
     const handleApprove = (key) => {
         // console.log(key);
-        const leaveObj = allLeavesData.find((leave) => key === leave.key);
+        const leaveObj = allLeavesData ? allLeavesData.find((leave) => key === leave.key):null;
         leaveObj.status = 'Approved'
         localStorage.setItem('leaveObj', JSON.stringify(leaveObj));
         setFlag('Approved')
@@ -35,7 +35,7 @@ function HodLogin2() {
 
     const handleReject = (key) => {
         // console.log(key);
-        const leaveObj = allLeavesData.find((leave) => key === leave.key);
+        const leaveObj = allLeavesData ? allLeavesData.find((leave) => key === leave.key):null;
         leaveObj.status = 'Rejected'
         localStorage.setItem('leaveObj', JSON.stringify(leaveObj));
         setFlag('Rejected')
